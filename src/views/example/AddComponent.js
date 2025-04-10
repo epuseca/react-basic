@@ -18,7 +18,7 @@ class AddComponent extends React.Component {
     }
     handleSubmit = () => {
         // alert('Click me')
-        if(!this.state.title || !this.state.salary){
+        if (!this.state.title || !this.state.salary) {
             alert('MIssing required params')
             return;
         }
@@ -50,7 +50,8 @@ class AddComponent extends React.Component {
                     <input
                         type="text"
                         value={this.state.salary} onChange={(event) => this.handleChangeSalary(event)}
-                    /><br /><br />
+                    />
+                    <br /><br />
                     <input
                         type="button"
                         value="Submit"
