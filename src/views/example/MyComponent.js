@@ -14,15 +14,22 @@ class MyComponent extends React.Component {
             { id: 'abcJob3', title: 'projectmanager', salary: '800' }
         ]
     }
-    
+    addNewJob = (job) => {
+        this.setState({
+            arrJobs: [...this.state.arrJobs, job]
+        })
+        console.log('Check jobbbb: ', job)
+    }
 
     // re-render
     render() {
         console.log("Call render>> ", this.state)
         return (
             <>
-                <AddComponent />
-                
+                <AddComponent 
+                addNewJob={this.addNewJob}
+                />
+
                 <ChildComponent
                     arrJobs={this.state.arrJobs}
                 />
