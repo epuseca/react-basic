@@ -7,35 +7,48 @@ class MyComponent extends React.Component {
     fragment
     */
     state = {
-        name: "LOC",
-        channel: "HEHE"
+        firstName: '',
+        lastName: ''
     }
-
-    handleOnChangeName = (event) => {
+    handleChangeFirstName = (event) => {
         this.setState({
-            name: event.target.value,
+            firstName: event.target.value,
         })
     }
-    // Arrow function
-    handleClickButton = () => {
-        alert('Click meee')
+    handleChangeLastName = (event) => {
+        this.setState({
+            lastName: event.target.value
+        })
+    }
+    handleSubmit = () => {
+        alert('Click me')
     }
     // re-render
     render() {
         console.log("Call render>> ", this.state)
         return (
             <>
-                <div className="first">
-                    <input value={this.state.name} type="text" onChange={ (event) => this.handleOnChangeName(event) } />
+                <form>
+                    <label htmlFor="fname">First name:</label><br />
+                    <input
+                        type="text"
+                        value={this.state.firstName} onChange=
+                        {
+                            (event) => this.handleChangeFirstName(event)
+                        } /><br />
 
-                    This is my channel: {this.state.channel}
-                </div>
-                <div className="second">
-                    Hello my component, My name is {this.state.name}
-                </div>
-                <div className="third">
-                    <button onClick= { () => this.handleClickButton() }>Click me</button>
-                </div>
+                    <label htmlFor="lname">Last name:</label>
+                    <br />
+                    <input
+                        type="text"
+                        value={this.state.lastName} onChange={(event) => this.handleChangeLastName(event)}
+                    /><br /><br />
+                    <input
+                        type="button"
+                        value="Submit"
+                        onClick={() => this.handleSubmit()}
+                    />
+                </form>
             </>
         )
     }
