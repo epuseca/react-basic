@@ -13,19 +13,20 @@ class MyComponent extends React.Component {
 
     handleOnChangeName = (event) => {
         this.setState({
-            name: event.target.value
+            name: event.target.value,
         })
     }
     // Arrow function
     handleClickButton = () => {
         alert('Click meee')
     }
-
+    // re-render
     render() {
+        console.log("Call render>> ", this.state)
         return (
             <>
                 <div className="first">
-                    <input value={this.state.name} type="text" onChange={(event) => this.handleOnChangeName(event)} />
+                    <input value={this.state.name} type="text" onChange={ (event) => this.handleOnChangeName(event) } />
 
                     This is my channel: {this.state.channel}
                 </div>
