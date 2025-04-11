@@ -27,13 +27,20 @@ class MyComponent extends React.Component {
             arrJobs: currentJobs
         })
     }
+    componentDidUpdate(prevProps, prevState) {
+        console.log('>>Run component did update', "prev state: ", prevState, "Current state: ", this.state)
+    }
+    componentDidMount() {
+        console.log('>>Run component did mount')
+    }
+
     // re-render
     render() {
         console.log("Call render>> ", this.state)
         return (
             <>
-                <AddComponent 
-                addNewJob={this.addNewJob}
+                <AddComponent
+                    addNewJob={this.addNewJob}
                 />
 
                 <ChildComponent
