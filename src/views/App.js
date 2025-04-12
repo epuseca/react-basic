@@ -4,33 +4,52 @@ import MyComponent from './example/MyComponent';
 import ListTodo from './Todos/ListTodo';
 import { ToastContainer, toast, Bounce } from 'react-toastify';
 
+import Nav from './Nav/Nav';
+import Home from './example/Home';
+import {
+  BrowserRouter,
+  Switch,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Simple todo app with Gia Loc try React.js
-        </p>
+    <BrowserRouter>
+      <div className="App">
+        <header className="App-header">
+          <Nav />
 
-        {/* <MyComponent/> */}
-        <ListTodo />
+          <img src={logo} className="App-logo" alt="logo" />
 
-      </header>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick={false}
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-        transition={Bounce}
-      />
-    </div>
+
+          {/* <MyComponent/> */}
+          {/* <ListTodo /> */}
+          {/* <Home /> */}
+
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/todo' element={<ListTodo />} />
+            <Route path='/about' element={<MyComponent />} />
+          </Routes>
+
+        </header>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick={false}
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+          transition={Bounce}
+        />
+      </div>
+    </BrowserRouter>
   );
 }
 
