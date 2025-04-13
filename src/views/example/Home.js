@@ -1,14 +1,14 @@
 import React from "react";
-import { withRouter } from "../Nav/withRouter";
-
+import { withRouter } from "../HOC/withRouter";
+import Color from "../HOC/Color";
 class Home extends React.Component {
-    componentDidMount() {
-        console.log(this.props.router); // bạn sẽ thấy navigate, location, params ở đây
+    // componentDidMount() {
+    //     console.log(this.props.router); // bạn sẽ thấy navigate, location, params ở đây
 
-        setTimeout(() => {
-            this.props.router.navigate('/todo');
-        }, 3000);
-    }
+    //     setTimeout(() => {
+    //         this.props.router.navigate('/todo');
+    //     }, 3000);
+    // }
     render() {
         return (
             <div>
@@ -18,4 +18,5 @@ class Home extends React.Component {
     }
 }
 
-export default withRouter(Home);
+// export default withRouter(Home);
+export default Color(Home);
