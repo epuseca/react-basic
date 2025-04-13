@@ -1,6 +1,8 @@
 import React from "react";
 import { withRouter } from "../HOC/withRouter";
 import Color from "../HOC/Color";
+import mypic from '../../assets/images/myPicture.jpg'
+
 class Home extends React.Component {
     // componentDidMount() {
     //     console.log(this.props.router); // bạn sẽ thấy navigate, location, params ở đây
@@ -11,9 +13,14 @@ class Home extends React.Component {
     // }
     render() {
         return (
-            <div>
-                Hello world from HOME page with gialoc
-            </div>
+            <>
+                <div>
+                    Hello world from HOME page with gialoc
+                </div>
+                <div>
+                    <img src={mypic} style={{width: '200px', height: '100px'}} />
+                </div>
+            </>
         )
     }
 }
