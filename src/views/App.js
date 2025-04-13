@@ -15,7 +15,6 @@ import {
   Route,
   Link
 } from "react-router-dom";
-//react-router in react-router-dom
 function App() {
   return (
     <BrowserRouter>
