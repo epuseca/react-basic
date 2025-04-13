@@ -3,6 +3,7 @@ import './App.scss';
 import MyComponent from './example/MyComponent';
 import ListTodo from './Todos/ListTodo';
 import { ToastContainer, toast, Bounce } from 'react-toastify';
+import ListUser from './Users/ListUser';
 
 import Nav from './Nav/Nav';
 import Home from './example/Home';
@@ -32,6 +33,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/todo' element={<ListTodo />} />
             <Route path='/about' element={<MyComponent />} />
+            <Route path='/user' element={<ListUser />} />
           </Routes>
 
           {/* <Switch>
