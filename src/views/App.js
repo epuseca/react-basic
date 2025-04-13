@@ -34,6 +34,18 @@ function App() {
             <Route path='/about' element={<MyComponent />} />
           </Routes>
 
+          {/* <Switch>
+            <Route path="/" exact>
+              <Home />
+            </Route>
+            <Route path="/todo">
+              <ListTodo />
+            </Route>
+            <Route path="/about">
+              <MyComponent />
+            </Route>
+          </Switch> */}
+
         </header>
         <ToastContainer
           position="top-right"
